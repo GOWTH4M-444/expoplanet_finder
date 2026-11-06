@@ -1,0 +1,135 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #09090b;
+    color: #F1F5F9;
+    background-image:
+      radial-gradient(1px 1px at 15% 25%, rgba(255, 255, 255, 0.35) 100%, transparent),
+      radial-gradient(1px 1px at 45% 65%, rgba(6, 182, 212, 0.32) 100%, transparent),
+      radial-gradient(1.5px 1.5px at 75% 18%, rgba(255, 255, 255, 0.25) 100%, transparent),
+      radial-gradient(1px 1px at 88% 80%, rgba(245, 158, 11, 0.22) 100%, transparent),
+      radial-gradient(circle at 50% 0%, #1e1b4b 0%, #09090b 70%);
+    background-attachment: fixed;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Cyber-Astronomy Advanced Glassmorphism */
+.cyber-glass {
+  background: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.085);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Staggered Spring Entrance Physics */
+@keyframes springCascadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.spring-enter-1 {
+  animation: springCascadeIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.spring-enter-2 {
+  animation: springCascadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.07s both;
+}
+
+.spring-enter-3 {
+  animation: springCascadeIn 0.72s cubic-bezier(0.16, 1, 0.3, 1) 0.14s both;
+}
+
+/* Breathing Starlight Glows */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.22), inset 0 0 8px rgba(6, 182, 212, 0.08);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(6, 182, 212, 0.45), inset 0 0 14px rgba(6, 182, 212, 0.18);
+  }
+}
+
+@keyframes pulseAmberGlow {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.22), inset 0 0 8px rgba(245, 158, 11, 0.08);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(245, 158, 11, 0.45), inset 0 0 14px rgba(245, 158, 11, 0.18);
+  }
+}
+
+.breathing-cyan-glow {
+  animation: pulseGlow 3.2s ease-in-out infinite;
+}
+
+.breathing-amber-glow {
+  animation: pulseAmberGlow 3.2s ease-in-out infinite;
+}
+
+/* Period-Synchronized Phase Lock Breathing Pulse (Opacity + Luminance Modulation) */
+@keyframes phaseLockOpacityBreath {
+  0%, 100% {
+    opacity: var(--phase-min-opacity, 0.56);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.16), inset 0 0 6px rgba(6, 182, 212, 0.08);
+  }
+  50% {
+    opacity: var(--phase-max-opacity, 1);
+    box-shadow: 0 0 24px rgba(16, 185, 129, 0.44), inset 0 0 14px rgba(34, 211, 238, 0.22);
+  }
+}
+
+@keyframes phaseLockAmberOpacityBreath {
+  0%, 100% {
+    opacity: var(--phase-min-opacity, 0.45);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.14), inset 0 0 6px rgba(245, 158, 11, 0.06);
+  }
+  50% {
+    opacity: var(--phase-max-opacity, 1);
+    box-shadow: 0 0 22px rgba(245, 158, 11, 0.42), inset 0 0 14px rgba(245, 158, 11, 0.2);
+  }
+}
+
+.phase-lock-breathing-locked {
+  animation: phaseLockOpacityBreath var(--phase-pulse-duration, 1.43s) ease-in-out infinite;
+  will-change: opacity, box-shadow;
+}
+
+.phase-lock-breathing-unlocked {
+  animation: phaseLockAmberOpacityBreath var(--phase-pulse-duration, 2.85s) ease-in-out infinite;
+  will-change: opacity, box-shadow;
+}
+
+/* 3D Perspective Hover Tilt for Telemetry Cards */
+.telemetry-tilt-card {
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.35s ease;
+  transform-style: preserve-3d;
+}
+
+.telemetry-tilt-card:hover {
+  transform: perspective(1000px) rotateX(1.2deg) rotateY(-1.2deg) translateY(-2px);
+  border-color: rgba(34, 211, 238, 0.32);
+}

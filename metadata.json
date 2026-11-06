@@ -1,0 +1,6 @@
+{
+  "name": "Exoplanet Finder — Kepler Transit Classifier",
+  "description": "Interactive educational NASA Kepler light-curve transit classifier powered by a 1D CNN architecture and Gemini explainability.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
